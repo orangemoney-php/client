@@ -1,29 +1,51 @@
 {
-    "name": "delhombre/php-tdd-boilerplate",
-    "description": "Designed to kickstart Test-Driven Development",
+    "name": "orangemoney-php/client",
+    "description": "Orange Money PHP API client for supercharged interaction with Orange Money API",
+    "keywords": [
+        "php",
+        "orange-money",
+        "om",
+        "sdk",
+        "api",
+        "client"
+    ],
     "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Dogbase",
+            "email": "brunodogbase@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.30"
+    },
     "autoload": {
         "psr-4": {
-            "Delhombre\\TDD\\": "src/"
+            "OrangeMoney\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Delhombre\\TDD\\Tests\\": "tests/"
+            "OrangeMoney\\Tests\\": "tests/"
         }
     },
-    "authors": [
-        {
-            "name": "delhombre",
-            "email": "brunodogbase@gmail.com"
-        }
-    ],
-    "require-dev": {
-        "pestphp/pest": "^2.28"
-    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "scripts": {
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:unit"
+        ]
     }
 }
